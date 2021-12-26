@@ -9,7 +9,7 @@ form {
     border-radius: 25px;
     padding: 15px;
     width: calc(100% - 2 * 15px);
-    margin-top: 19px;
+    // margin-top: 19px; не делай так, приходится обнулять в своих классах
     font-size: 17px;
     outline: none;
   }
@@ -23,9 +23,10 @@ form {
     color: #ff6d4c;
   }
 
-  button {
-    margin-top: 43px;
-  }
+  // не делай так, приходится обнулять в своих классах
+  // button {
+  //   margin-top: 43px;
+  // }
 
   .passQuestion {
     margin-top: 7px;
