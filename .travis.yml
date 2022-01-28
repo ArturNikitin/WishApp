@@ -3,7 +3,7 @@ node_js:
     - "12"
 cache: yarn
 script:
-  - yarn build
+  - yarn build --pure-lockfile
 
 #deploy:
 #  # deploy app as api server
