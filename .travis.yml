@@ -8,6 +8,8 @@ node_js:
 script:
   - yarn install --frozen-lockfile
 
+
+
 #deploy:
 #  # deploy app as api server
 #  - provider: heroku
