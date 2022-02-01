@@ -1,0 +1,112 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "airbnb",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint", "simple-import-sort"],
+  "parser": "@typescript-eslint/parser",
+  "ignorePatterns": ["serviceWorker.js", "*.test.js"],
+  "rules": {
+    "simple-import-sort/imports": "error",
+    "jsx-quotes": ["error", "prefer-single"],
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    ],
+    "max-len": ["warn", { "code": 130 }],
+
+    // ignore linter for extensions: *.ts, *.tsx
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+
+    "import/prefer-default-export": 0,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "jsx-a11y/no-static-element-interactions": 0,
+    "jsx-a11y/interactive-supports-focus": 0,
+    // по дефолту требует обернуть input в label + использовать htmlFor
+    // не пропускает файл DynamicRating
+    "jsx-a11y/label-has-associated-control": [
+      2,
+      {
+        "labelAttributes": ["label", "title"],
+        "assert": "either",
+        "depth": 3
+      }
+    ],
+    "class-methods-use-this": 0,
+    // разрешаем только console.error() и алерты
+    "no-console": ["warn", { "allow": ["error"] }],
+    "no-alert": "warn",
+    "linebreak-style": 0,
+    // разрешаем использовать ++ -- в теле цикла
+    "no-plusplus": [
+      "error",
+      {
+        "allowForLoopAfterthoughts": true
+      }
+    ],
+    "no-shadow": "off",
+    // правила для отступов между строками
+    "padding-line-between-statements": [
+      "error",
+      {
+        "blankLine": "always",
+        "prev": ["const", "let"],
+        "next": "*"
+      },
+      {
+        "blankLine": "any",
+        "prev": ["const", "let"],
+        "next": ["const", "let"]
+      },
+      {
+        "blankLine": "always",
+        "prev": ["case", "default"],
+        "next": "*"
+      }
+    ],
+    "react/prop-types": 0,
+    "react/require-default-props": 0,
+    "yoda": "warn",
+    "no-empty-function": "off",
+    "@typescript-eslint/no-inferrable-types": 0,
+    // следует оставить до полной типизации проекта
+    "@typescript-eslint/explicit-module-boundary-types": 0,
+    "@typescript-eslint/no-explicit-any": 0
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  }
+}
