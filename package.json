@@ -40,9 +40,7 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest",
-      "plugin:import/errors",
-      "plugin:import/typescript"
+      "react-app/jest"
     ]
   },
   "browserslist": {
